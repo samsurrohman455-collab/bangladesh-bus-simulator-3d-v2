@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    font-family: 'Plus Jakarta Sans', 'Hind Siliguri', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+  }
+}
+
+.font-display {
+  font-family: 'Outfit', 'Hind Siliguri', system-ui, sans-serif;
+}
+
+.font-bangla {
+  font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.weather-rain-layer {
+  position: absolute;
+  inset: -40% -20%;
+  background-image: repeating-linear-gradient(
+    102deg,
+    rgba(224, 242, 254, 0) 0px,
+    rgba(224, 242, 254, 0) 24px,
+    rgba(224, 242, 254, 0.26) 25px,
+    rgba(224, 242, 254, 0) 27px
+  );
+  background-size: 160px 160px;
+}
+
+.weather-mist-band {
+  position: absolute;
+  inset: 18% -30% 10% -30%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .weather-rain-layer {
+    animation: weatherRainFall 0.45s linear infinite;
+  }
+
+  .weather-mist-band {
+    animation: weatherMistDrift 14s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes weatherRainFall {
+  0% {
+    transform: translate3d(0, -160px, 0);
+  }
+  100% {
+    transform: translate3d(-34px, 0, 0);
+  }
+}
+
+@keyframes weatherMistDrift {
+  0% {
+    transform: translate3d(-6%, 0, 0);
+  }
+  100% {
+    transform: translate3d(6%, 0, 0);
+  }
+}
+

@@ -1,0 +1,8 @@
+{
+  "name": "Remix Bangla Highway Coach 3D",
+  "description": "3D Bangladeshi luxury highway bus simulator featuring Hanif, Shyamoli, and Ena liveries, scenic rural highways, AI traffic, cockpit view, hydraulic air horn, and Taka economy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
